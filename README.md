@@ -1,4 +1,4 @@
-# Telegram бот работающий с ChatGPT
+# Telegram bot working with ChatGPT
 
 Receives text and voice messages
 
