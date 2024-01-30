@@ -4,14 +4,15 @@ export const INITIAL_SESSION = {
   messages: [],
 }
 
-export async function initCommand(ctx) {
-  ctx.session = { ...INITIAL_SESSION }
-  await ctx.reply('Жду вашего голосового или текстового сообщения')
+export const SELECT_LANGUAGE = {
+  'Русский': 'ru',
+  'English': 'en',
+  'Tiếng Việt': 'vi'
 }
 
 export async function processTextToChat(ctx, content) {
   try {
-      ctx.session.messages.push({ role: openai.roles.USER, content })
+    ctx.session.messages.push({ role: openai.roles.USER, content })
 
     const response = await openai.chat(ctx.session.messages)
 
@@ -20,7 +21,7 @@ export async function processTextToChat(ctx, content) {
       content: response.content,
     })
 
-    await ctx.reply(response.content)
+    return response.content
   } catch (e) {
     console.log('Error while proccesing text to gpt', e.message)
   }

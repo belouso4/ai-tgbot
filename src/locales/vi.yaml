@@ -1,0 +1,8 @@
+start: Đang chờ giọng nói hoặc tin nhắn văn bản của bạn
+converter: Chuyển giọng nói thành văn bản...
+processingAi: 
+  Đang xử lý văn bản Ai...
+  
+  (Thời gian phản hồi tùy thuộc vào lượng dữ liệu)
+yourRequest: 'Yêu cầu của bạn: ${text}'
+chooseLang: Choose lang.
