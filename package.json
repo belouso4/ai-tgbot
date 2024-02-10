@@ -2,16 +2,17 @@
   "name": "aitgchatbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./src/main.js",
-    "start": "node ./src/main.js"
+    "dev": "nodemon src/index.js",
+    "build": "ncc build src/index.js -o public -m"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vercel/ncc": "^0.38.1",
     "cross-env": "^7.0.3",
     "nodemon": "^3.0.1"
   },

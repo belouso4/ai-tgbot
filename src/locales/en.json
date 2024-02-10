@@ -1,0 +1,7 @@
+{
+  "start": "Waiting for your voice or text message",
+  "converter": "Convert voice to text...",
+  "processingAi": "Text processing Ai...(Response time depends on the amount of data)",
+  "yourRequest": "Your request: ${text}",
+  "chooseLang": "Choose lang."
+}

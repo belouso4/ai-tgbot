@@ -7,8 +7,10 @@ import { ogg } from './ogg.js'
 import { removeFile } from './utils.js'
 import { openai } from './openai.js'
 import {initCommand, processTextToChat, INITIAL_SESSION} from './logic.js'
-
-const bot = new Telegraf(process.env.BOT_TOKEN)
+import { development, production } from './core/index.js'
+const BOT_TOKEN = process.env.BOT_TOKEN || '';
+const ENVIRONMENT = process.env.NODE_ENV || '';
+const bot = new Telegraf(BOT_TOKEN)
 
 bot.use(session())
 
@@ -51,7 +53,9 @@ bot.on(message('text'), async (ctx) => {
     }
 })
 
-bot.launch()
-
-process.once('SIGINT', () => bot.stop('SIGINT'))
-process.once('SIGTERM', () => bot.stop('SIGTERM'))
+//prod mode (Vercel)
+export const startVercel = async (req, res) => {
+  await production(req, res, bot);
+};
+//dev mode
+ENVIRONMENT !== 'production' && development(bot);
