@@ -1,4 +1,4 @@
-import { startVercel } from '../src/index.js';
+import { startVercel } from '../src/main.js';
 
 export default async function handle(req, res) {
   try {
