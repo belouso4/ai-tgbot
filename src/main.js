@@ -5,7 +5,7 @@ import { message } from 'telegraf/filters'
 import { code } from 'telegraf/format'
 
 import {initCommand, processTextToChat, INITIAL_SESSION} from './logic.js'
-import { development, production } from './core/inde.js'
+import { development, production } from './core/index.js'
 const BOT_TOKEN = process.env.BOT_TOKEN || '';
 const ENVIRONMENT = process.env.NODE_ENV || '';
 const bot = new Telegraf(BOT_TOKEN)

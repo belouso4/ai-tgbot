@@ -1,6 +1,6 @@
-exports.id = 73;
-exports.ids = [73];
-exports.modules = {
+export const id = 73;
+export const ids = [73];
+export const modules = {
 
 /***/ 7760:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
@@ -28,7 +28,6 @@ module.exports = globalThis.DOMException
 /***/ 4073:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -149,4 +148,3 @@ async function fileFromPath(path, filenameOrOptions, options) {
 /***/ })
 
 };
-;

@@ -2,10 +2,11 @@
   "name": "aitgchatbot",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon src/main.js",
-    "build": "ncc build src/main.js -o public -m"
+    "dev": "nodemon src/index.js",
+    "build": "ncc build src/index.js -o public -m"
   },
   "keywords": [],
   "author": "",
