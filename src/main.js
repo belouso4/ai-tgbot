@@ -28,6 +28,11 @@ const i18n = new TelegrafI18n({
 bot.use(session())
 bot.use(i18n.middleware())
 
+bot.catch((err, ctx) => {
+  console.log(`Ooops, произошла ошибка для юзера ${ctx.update.message.from.id}`, err);
+  ctx.reply('Произошла ошибка. Пожалуйста, проверьте настройки портов и сетевых правил.');
+});
+
 bot.command('start', async ctx => {
   await ctx.reply(
     ctx.i18n.t('chooseLang'),
@@ -100,7 +105,12 @@ bot.on(message('text'), async (ctx) => {
     }
 })
 
-bot.launch()
+
+bot.launch().then(() => {
+  console.log('Бот успешно запущен');
+}).catch((err) => {
+  console.error('Ошибка запуска бота:', err);
+});
 
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
