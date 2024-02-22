@@ -2,7 +2,7 @@
   "name": "aitgchatbot",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./src/main.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon ./src/main.js",
@@ -23,5 +23,8 @@
     "openai": "^4.19.1",
     "telegraf": "^4.15.0",
     "telegraf-i18n": "^6.6.0"
+  },
+  "engines": {
+    "node": ">=18.18.0 <20.9.0"
   }
 }
